@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDbDemo.Models;
+using System;
 
 namespace MongoDbDemo
 {
@@ -6,7 +7,16 @@ namespace MongoDbDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MongoCrud db = new MongoCrud("ExadelBonusDb");
+
+            db.InsertRecord<VendorModel>("Vendors", new VendorModel { Name = "Sweet House" });
+
+
+
+            Console.ReadKey();
         }
     }
+
+
+
 }
