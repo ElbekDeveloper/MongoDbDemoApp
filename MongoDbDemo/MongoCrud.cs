@@ -1,4 +1,6 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
+using System.Collections.Generic;
 
 namespace MongoDbDemo
 {
@@ -20,6 +22,13 @@ namespace MongoDbDemo
             collection.InsertOne(record);
         }
 
+
+        public List<T> LoadRecords<T>(string collectionName)
+        {
+            var collection = database.GetCollection<T>(collectionName);
+
+            return collection.Find(new BsonDocument()).ToList();
+        }
     }
 
 }
