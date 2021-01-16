@@ -9,7 +9,7 @@ namespace MongoDbDemo
         {
             MongoCrud db = new MongoCrud("ExadelBonusDb");
 
-            db.InsertRecord<VendorModel>("Vendors", new VendorModel { Name = "Sweet House" });
+            db.InsertRecord<VendorModel>("Vendors",  });
 
 
 
